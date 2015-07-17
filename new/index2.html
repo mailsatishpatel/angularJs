@@ -1,0 +1,67 @@
+<html>
+	<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">		
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+		
+						
+			function findCelsius(){
+				var fahrenheit = document.getElementById("fahrenheit").value;
+				var celsius;
+				if(fahrenheit != ''){
+					celsius = (fahrenheit - 32) * 5/9;
+					document.getElementById("output").innerHTML = celsius;
+				}else{
+					document.getElementById("output").innerHTML = "Please enter a value!";
+				}
+			}
+			
+		
+			//this function will allow only numbers to be entered in the textbox
+			function allowOnlyNumbers(evt) {
+				evt = (evt) ? evt : window.event;
+				var charCode = (evt.which) ? evt.which : evt.keyCode;
+				if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+					return false;
+				}
+				return true;
+			}
+		
+		</script>
+	</head>
+	<body>
+	<a href="about.html"> This will lead to about page</a>
+		<h2>Enter Fahrenheit</h2>
+		<input type="text" id="fahrenheit" onkeypress="return allowOnlyNumbers()" />
+		<button onclick="findCelsius()" >Find Celsius</button>
+ 
+		<h4>Output: <span id="output"></span></h4>
+		
+		<table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="success">
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr class="danger">
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr class="info">
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+	</body>
+</html>
